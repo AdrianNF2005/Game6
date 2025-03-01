@@ -38,20 +38,20 @@ let millisANT = 0;
 let FrameDuck = 8;
 
 function preload() {
-  Fondo1 = loadImage("/imgs/Fondo1.png");
-  Duck1 = loadImage("/imgs/DuckWalking/0.png");
-  Duck2 = loadImage("/imgs/DuckWalking/1.png");
-  Duck3 = loadImage("/imgs/DuckWalking/2.png");
-  Duck4 = loadImage("/imgs/DuckWalking/3.png");
-  Duck5 = loadImage("/imgs/DuckWalking/4.png");
-  Duck6 = loadImage("/imgs/DuckWalking/5.png");
-  Duck7 = loadImage("/imgs/DuckWalking/6.png");
-  Duck8 = loadImage("/imgs/DuckWalking/7.png");
-  Duck9 = loadImage("/imgs/DuckWalking/8.png");
+  Fondo1 = loadImage("Fondo1.png");
+  Duck1 = loadImage("0.png");
+  Duck2 = loadImage("1.png");
+  Duck3 = loadImage("2.png");
+  Duck4 = loadImage("3.png");
+  Duck5 = loadImage("4.png");
+  Duck6 = loadImage("5.png");
+  Duck7 = loadImage("6.png");
+  Duck8 = loadImage("7.png");
+  Duck9 = loadImage("8.png");
   
-  customFont = loadFont("/imgs/font1.ttf");
-  Borde = loadImage("/imgs/Border.png");
-  this.img = loadImage("/imgs/dinosaur-sprite.png");
+  customFont = loadFont("font1.ttf");
+  Borde = loadImage("Border.png");
+  this.img = loadImage("dinosaur-sprite.png");
   this.game.sprite = this.img;
 }
 
