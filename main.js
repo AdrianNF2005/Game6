@@ -37,6 +37,8 @@ let millisANT = 0;
 
 let FrameDuck = 8;
 
+let Iniciado = false;
+
 function preload() {
   Fondo1 = loadImage("Fondo1.png");
   Duck1 = loadImage("0.png");
@@ -56,15 +58,6 @@ function preload() {
 }
 
 function setup(){
-
-  while(millis() < 5000){
-
-  }
-  createCanvas(1280, 720);
-  frameRate(60);
-  textFont(customFont);
-  textSize(32);
-  start();
 }
 
 function start(){
@@ -84,6 +77,18 @@ function restart(){
 }
 
 function draw(){
+
+    if(millis() >= 5000 && Iniciado == false){
+
+    createCanvas(1280, 720);
+    frameRate(60);
+    textFont(customFont);
+    textSize(32);
+    start();
+    Iniciado = true;
+
+  }
+  
   checkIfKeyIsPressed();
   clear();
   /*
