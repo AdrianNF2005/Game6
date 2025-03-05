@@ -57,7 +57,7 @@ function preload() {
 
 function setup(){
 
-  while(millis() < 2000){
+  while(millis() < 5000){
 
   }
   createCanvas(1280, 720);
