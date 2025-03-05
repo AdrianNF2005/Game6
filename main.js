@@ -56,6 +56,10 @@ function preload() {
 }
 
 function setup(){
+
+  while(millis() < 2000){
+
+  }
   createCanvas(1280, 720);
   frameRate(60);
   textFont(customFont);
