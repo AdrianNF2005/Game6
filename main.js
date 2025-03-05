@@ -37,27 +37,41 @@ let millisANT = 0;
 
 let FrameDuck = 8;
 
-let Iniciado = false;
-
 function preload() {
-  Fondo1 = loadImage("Fondo1.png");
-  Duck1 = loadImage("0.png");
-  Duck2 = loadImage("1.png");
-  Duck3 = loadImage("2.png");
-  Duck4 = loadImage("3.png");
-  Duck5 = loadImage("4.png");
-  Duck6 = loadImage("5.png");
-  Duck7 = loadImage("6.png");
-  Duck8 = loadImage("7.png");
-  Duck9 = loadImage("8.png");
+  Fondo1 = loadImage("/imgs/Fondo1.png");
+  Duck1 = loadImage("/imgs/DuckWalking/0.png");
+  Duck2 = loadImage("/imgs/DuckWalking/1.png");
+  Duck3 = loadImage("/imgs/DuckWalking/2.png");
+  Duck4 = loadImage("/imgs/DuckWalking/3.png");
+  Duck5 = loadImage("/imgs/DuckWalking/4.png");
+  Duck6 = loadImage("/imgs/DuckWalking/5.png");
+  Duck7 = loadImage("/imgs/DuckWalking/6.png");
+  Duck8 = loadImage("/imgs/DuckWalking/7.png");
+  Duck9 = loadImage("/imgs/DuckWalking/8.png");
   
-  customFont = loadFont("font1.ttf");
-  Borde = loadImage("Border.png");
-  this.img = loadImage("dinosaur-sprite.png");
+  customFont = loadFont("/imgs/font1.ttf");
+  Borde = loadImage("/imgs/Border.png");
+  this.img = loadImage("/imgs/dinosaur-sprite.png");
   this.game.sprite = this.img;
 }
 
 function setup(){
+      // Crear el iframe oculto inicialmente
+    iframe = createElement("iframe");
+    iframe.attribute("src", "https://www.youtube.com/embed/S1uWGtqNCzk?autoplay=1&loop=1&playlist=S1uWGtqNCzk&cc_load_policy=0&vq=hd1080");
+    iframe.attribute("width", "1280");
+    iframe.attribute("height", "718");
+    iframe.style("border", "none");
+    iframe.style("position", "absolute");
+    iframe.style("top", "0");
+    iframe.style("left", "0");
+    iframe.style("z-index", "10"); // Se muestra arriba del canvas al inicio
+  
+  createCanvas(1280, 720);
+  frameRate(60);
+  textFont(customFont);
+  textSize(32);
+  start();
 }
 
 function start(){
@@ -77,18 +91,6 @@ function restart(){
 }
 
 function draw(){
-
-    if(millis() >= 5000 && Iniciado == false){
-
-    createCanvas(1280, 720);
-    frameRate(60);
-    textFont(customFont);
-    textSize(32);
-    start();
-    Iniciado = true;
-
-  }
-  
   checkIfKeyIsPressed();
   clear();
   /*
@@ -161,4 +163,10 @@ function keyReleased() {
       }, 200);
     }
   }
+}
+
+function mousePressed() {
+  
+iframe.style("z-index", "-20"); // Ahora el canvas está por encima
+  
 }
