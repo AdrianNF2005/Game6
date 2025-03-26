@@ -92,6 +92,9 @@ function restart(){
 }
 
 function draw(){
+
+  if (!started) return; // No ejecuta draw() hasta que el usuario haga clic
+  
   checkIfKeyIsPressed();
   clear();
   /*
