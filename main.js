@@ -1,3 +1,4 @@
+let started = false; // Variable de control
 
 var firebaseConfig = {
   apiKey: "AIzaSyDF_0fXUVHiauVr83vsVIqBMkoXjNzRKlY",
@@ -168,5 +169,10 @@ function keyReleased() {
 function mousePressed() {
   
 iframe.style("z-index", "-20"); // Ahora el canvas está por encima
+
+    if (!started) {
+    started = true; // Cambia el estado a iniciado
+    console.log("¡El usuario hizo clic! Iniciando...");
+  }
   
 }
